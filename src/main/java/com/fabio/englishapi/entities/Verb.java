@@ -13,10 +13,15 @@ public class Verb implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(nullable = false, length = 20)
     private String type;
+    @Column(nullable = false, unique = true,length = 30)
     private String infinitive;
+    @Column(nullable = false, unique = true,length = 30)
     private String past;
+    @Column(nullable = false, unique = true, length = 30)
     private String participle;
+    @Column(length = 100)
     private String portuguese;
 
     public Verb(){}
