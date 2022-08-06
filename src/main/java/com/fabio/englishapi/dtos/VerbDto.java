@@ -1,5 +1,7 @@
 package com.fabio.englishapi.dtos;
 
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 
 public class VerbDto implements Serializable {
@@ -7,10 +9,18 @@ public class VerbDto implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private Long id;
+    @NotNull(message = "The type cannot be null.")
     private String type;
+    @NotNull(message = "The type cannot be null.")
+    @Size(min = 2, max = 30, message = "The infinitve field must be between 2 and 30 caracters.")
     private String infinitive;
+    @NotNull(message = "The past cannot be null.")
+    @Size(min = 2, max = 30, message = "The past field must be between 2 and 30 caracters.")
     private String past;
+    @NotNull(message = "The participle cannot be null.")
+    @Size(min = 2, max = 30, message = "The participle field must be between 2 and 30 caracters.")
     private String participle;
+    @Size(min = 2, max = 30, message = "The portuguese field must be between 2 and 30 caracters.")
     private String portuguese;
 
     public VerbDto(){}
