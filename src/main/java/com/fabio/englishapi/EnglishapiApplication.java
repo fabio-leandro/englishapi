@@ -10,7 +10,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import java.util.List;
 
 @SpringBootApplication
-public class EnglishapiApplication implements CommandLineRunner {
+public class EnglishapiApplication {
 
 	@Autowired
 	private VerbRepository verbRepository;
@@ -19,16 +19,4 @@ public class EnglishapiApplication implements CommandLineRunner {
 		SpringApplication.run(EnglishapiApplication.class, args);
 	}
 
-	@Override
-	public void run(String... args) throws Exception {
-
-		Verb verb1 = new Verb(1L,"Regular","play","played","played",
-				"Jogar,brincar,tocar");
-
-		Verb verb2 = new Verb(2L,"Irregular","speak","spoke","spoken","falar");
-		Verb verb3 = new Verb(3L,"Regular","cook","cooked","cooked","cozinhar");
-		Verb verb4 = new Verb(4L,"Irregular","say","said","said","dizer");
-
-		verbRepository.saveAll(List.of(verb1,verb2,verb3,verb4));
-	}
 }
