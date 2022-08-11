@@ -2,8 +2,8 @@ package com.fabio.englishapi.entities.enums;
 
 public enum VerbType {
 
-    PESSOAFISICA(1,"Irregular"),
-    PESSOAJURIDICA(2,"Regular");
+    IRREGULAR(1,"Irregular"),
+    REGULAR(2,"Regular");
 
     private int cod;
     private String description;
